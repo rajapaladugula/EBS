@@ -1,0 +1,10 @@
+cd /home/ec2-user
+aws s3 cp myapp.zip s3://myapp9876/myapp.zip
+aws elasticbeanstalk create-application-version --application-name my-app --version-label v2 --description MyAppmodified --source-bundle S3Bucket="myapp9876",S3Key="myapp.zip" --auto-create-application
+aws elasticbeanstalk create-environment --application-name my-app --environment-name my-env --version-label v3 --solution-stack-name "64bit Amazon Linux 2015.03 v1.4.6 running PHP 5.6"
+
+
+
+
+
+
