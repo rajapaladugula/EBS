@@ -1,6 +1,13 @@
+# Changing directory.
 cd /home/ec2-user
+
+# AWS CLI Command to copy files from S3.
 aws s3 cp myapp.zip s3://myapp9876/myapp.zip
+
+# AWS CLI Command to create an application on AWS EBS with the required parameters.
 aws elasticbeanstalk create-application-version --application-name my-app --version-label v2 --description MyAppmodified --source-bundle S3Bucket="myapp9876",S3Key="myapp.zip" --auto-create-application
+
+# AWS CLI Command to create an environment n AWS EBS with the required parameters.
 aws elasticbeanstalk create-environment --application-name my-app --environment-name my-env --version-label v3 --solution-stack-name "64bit Amazon Linux 2015.03 v1.4.6 running PHP 5.6"
 
 
